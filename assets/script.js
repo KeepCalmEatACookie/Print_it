@@ -30,5 +30,32 @@ if (document.readyState === "complete") {
 		tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
 	  },
 	];
-  
+  // Calcul du nombre d'items pour le slider
+  let nbItems = slides.length - 1;
+  // Position de départ
+  let numDot = 0;
+  // Dossier des images
+  let srcImage = "./assets/images/slideshow/";
+
+  // On selectionne les items suivants
+  const bannerImg = document.querySelector(".banner-img");
+  const bannerText = document.querySelector(".banner-text");
+  const arrowLeft = document.querySelector(".arrow_left");
+  const arrowRight = document.querySelector(".arrow_right");
+  const dots = document.querySelector(".dots");
+
+  // Apparition des éléments une fois le script chargé
+  arrowLeft.classList.remove("hidden");
+  arrowRight.classList.remove("hidden");
+
+  // Mise en place des points de sélection
+  for (let cercle = 0; cercle <= nbItems; cercle++) {
+	dots.innerHTML +=
+	  '<span id="dot' +
+	  cercle +
+	  '" class="dot" title="Image' +
+	  (cercle + 1) +
+	  '"></span>';
+  }
+
 }
