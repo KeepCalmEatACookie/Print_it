@@ -57,5 +57,18 @@ if (document.readyState === "complete") {
 	  (cercle + 1) +
 	  '"></span>';
   }
+ // La mise en place d'une liste de tous les élements ayant la class "dot"
+ const dotList = document.querySelectorAll(".dot");
+  
+ // Mise en place d'un cercle plein pour l'image active qui est actif un cercle vide pour les autres points
+ const addSelected = () => {
+   for (let cercle = 0; cercle <= nbItems; cercle++) {
+	 if (cercle === numDot) {
+	   dotList[cercle].classList.add("dot_selected");
+	 } else {
+	   dotList[cercle].classList.remove("dot_selected");
+	 }
+   }
+ };
 
 }
